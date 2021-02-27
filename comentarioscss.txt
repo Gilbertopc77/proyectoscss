@@ -1,0 +1,4 @@
+Ctrl + K Ctrl + C - Añadir línea comentario.
+Ctrl + K Ctrl + U - Eliminar línea comentario.
+Shift + Alt + A - Añadir o eliminar bloque de comentario.
+Ctrl + ç - Añadir o eliminar bloque de comentario.

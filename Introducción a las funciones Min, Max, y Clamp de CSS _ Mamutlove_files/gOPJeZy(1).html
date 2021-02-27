@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://cdpn.io/alejandromur/fullembedgrid/gOPJeZy?animations=run&type=embed -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  <title>CodePen - min(), max(), clamp()</title>
+  
+  
+  
+  
+<style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  font-family: 'Courier';
+  color: #333;
+}
+
+.post {
+  margin: 3em auto;
+  padding: 2em;
+  border: 2px solid #333;
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+/*
+  Computa los valores y elige el más bajo
+  Si el 98% de la pantalla es < que 680px coge este valor
+  En caso contrario elige 680px
+
+  Lo que es equivalente a:
+
+  width: 98%;
+  max-width: 680px;
+*/
+.min {
+  /*
+  Se pueden pasar múltiples valores siempre que vayan separados por comas
+  width: min(98%, 680px + 10vw, 1000px, 20em);
+  */
+  width: min(98%, 680px);
+}
+
+/*
+  Computa los valores y elige el más alto
+  Si el 98% de la pantalla es > que 680px coge este valor
+  En caso contrario elige 680px
+
+  Lo que es equivalente a:
+
+  width: 98%;
+  min-width: 680px;
+*/
+.max {
+  width: max(680px, 98%);
+}
+
+/*
+  clamp(MIN, VAL, MAX) puede resolverse como
+  max(MIN, min(VAL, MAX))
+
+  Por lo tanto estaríamos indicando un valor mínimo con MIN que no podría reducir
+  Un valor máximo con MAX que no se podría sobrepasar
+  Un valor ideal entre ambos
+
+  Esta fórmula asegura que se aplique el valor más grande entre un mínimo y el más pequeño de entre uno ideal y uno máximo
+  Si VAL es superior a MAX, se descarta porque seleccionamos el mínimo, y se va a resolver con MIN escogiendo el valor más alto
+*/
+.clamp {
+  width: clamp(320px, 90%, 48rem);
+}
+
+/*
+  Se pueden combinar estas funciones entre ellas
+  En este ejemplo buscamos un valor mínmio seguro que sería 1rem
+  Si la obtención de un valor con la funcioónes min() y calc() resultase 
+  en un valor < que 1rem no sería elegido y por tanto 1rem actuaría como fallback
+
+  Si aumentamos el tamaño de la pantalla el cálculo que hacemos en max()
+  supera el valor 1rem y entonces es escogido
+
+  El primer valor es obtenido mediante min(), y será el menor de entre los tres valores 
+  que le pasamos. 
+*/
+p {
+  font-size: calc(1em + 0.25vw);
+  font-size: max(min(10%, ((1.25vw + 10px) * 0.5), 5vw), 1rem);
+  font-size: max(min(10%, calc((1.25vw + 10px) * 0.5), 5vw), 1rem);
+}
+
+p:not(:last-child) {
+  margin-bottom: 1em;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+  <div class="post min">
+  <h1>Min()</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!</p>
+</div>
+
+<div class="post max">
+  <h1>Max()</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!</p>
+</div>
+
+<div class="post clamp">
+  <h1>Clamp()</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!</p>
+</div>
+  
+  
+  
+  
+
+  <script src="./iframeRefreshCSS-bb9a2ba1f03f6147732cb3cd52ac86c6b24524aa87a05ed0b726f11e46d7e277.js.descarga"></script>
+
+
+
+ 
+</body></html>

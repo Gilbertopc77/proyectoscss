@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://www.mamutlove.com/blog/funciones-min-max-clamp-en-css/ -->
+<html lang="es" itemscope="" itemtype="http://schema.org/WebPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="language" content="es">
+    <meta name="copyright" content="&amp;copy; 2019 Mamutlove">
+    
+    <meta name="author" content="Alejandro Mur, Nora Cagigao">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.mamutlove.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.mamutlove.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.mamutlove.com/favicon-16x16.png">
+    <link rel="manifest" href="https://www.mamutlove.com/site.webmanifest">
+    <link rel="mask-icon" href="https://www.mamutlove.com/safari-pinned-tab.svg" color="#ff0066">
+    <meta name="msapplication-TileColor" content="#ff0066">
+    <meta name="theme-color" content="#ffffff">
+    
+
+    <title itemprop="name">Introducción a las funciones Min, Max, y Clamp de CSS | Mamutlove</title>
+<meta property="og:title" content="Introducción a las funciones Min, Max, y Clamp de CSS | Mamutlove">
+<meta name="twitter:title" content="Introducción a las funciones Min, Max, y Clamp de CSS | Mamutlove">
+<meta itemprop="name" content="Introducción a las funciones Min, Max, y Clamp de CSS | Mamutlove">
+<meta name="application-name" content="Introducción a las funciones Min, Max, y Clamp de CSS | Mamutlove">
+<meta property="og:site_name" content="Mamutlove">
+
+<meta name="description" content="Introducción a las funciones matemáticas de CSS min(), max() y clamp() y sus principales usos">
+<meta itemprop="description" content="Introducción a las funciones matemáticas de CSS min(), max() y clamp() y sus principales usos">
+<meta property="og:description" content="Introducción a las funciones matemáticas de CSS min(), max() y clamp() y sus principales usos">
+<meta name="twitter:description" content="Introducción a las funciones matemáticas de CSS min(), max() y clamp() y sus principales usos">
+    <!--<base href="https://www.mamutlove.com/blog/funciones-min-max-clamp-en-css/">--><base href=".">
+<link href="https://www.mamutlove.com/blog/funciones-min-max-clamp-en-css/" itemprop="url">
+<meta name="url" content="https://www.mamutlove.com/blog/funciones-min-max-clamp-en-css/">
+<meta name="twitter:url" content="https://www.mamutlove.com/blog/funciones-min-max-clamp-en-css/">
+<meta property="og:url" content="https://www.mamutlove.com/blog/funciones-min-max-clamp-en-css/">
+
+    <link rel="stylesheet" href="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/styles.css">
+    <script async="" src="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/main.min.js.descarga"></script>
+
+    
+    <meta name="robots" content="follow, all">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+
+    
+
+    
+    <meta property="og:type" content="article">
+    <meta property="og:article:published_time" content="2020-08-02T17:09:05+0200">
+    <meta property="article:published_time" content="2020-08-02T17:09:05+0200">
+
+    
+    <meta property="og:article:author" content="Alejandro mur">
+    <meta property="article:author" content="Alejandro mur">
+    <meta name="author" content="Alejandro mur">
+    
+
+    
+    <meta name="news_keywords" content="CSS">
+    <meta property="article:section" content="CSS">
+    
+
+    <script type="application/ld+json">
+            {
+            "@context": "http://schema.org",
+            "@type": "Article",
+            "headline": "Introducción a las funciones Min, Max, y Clamp de CSS",
+            "author": {
+                "@type": "Person",
+                "name": "https://github.com/alejandromur"
+            },
+            "datePublished": "2020-08-02",
+            "description": "Introducción a las funciones matemáticas de CSS min(), max() y clamp() y sus principales usos",
+            "wordCount": 1245,
+            "mainEntityOfPage": "True",
+            "dateModified": "2020-08-02",
+            "image": {
+                "@type": "imageObject",
+                "url": ""
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Mamutlove",
+                "logo": {
+                "@type": "imageObject",
+                "url": "https://mamutlove.com/favicon-32x32.png"
+                }
+            }
+            }
+    </script>
+    
+    <script>
+        
+        if (localStorage.getItem('mamut-theme')) {
+            Utils.addClass('body', localStorage.getItem('mamut-theme'));
+        }
+    </script>
+<script type="text/javascript" async="" src="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/embed.js.descarga"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.4a251b79c005f7a6da462eb85b7e7daf.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.38ea27189bdb723eae3dabf5bc7b8c0b.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.54cf549c270b597d5587d24486b38d71.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/alfie_v4.63f1ab6d6b9d5807dc0c94ef3fe0b851.js.descarga" async="" charset="UTF-8"></script></head>
+
+<body>
+    <a class="main-content-anchor" href="https://www.mamutlove.com/blog/funciones-min-max-clamp-en-css/#mainContent">Saltar al contenido</a>
+
+    <div class="banner">
+  <div class="banner-wrapper">
+    <p class="banner__text">
+      Actualmente <a href="https://www.mamutlove.com/mamut/#d%c3%b3nde-estamos"><strong>estamos abiertos a nuevas propuestas</strong></a> de colaboración para iniciar nuevos proyectos :D
+    </p>
+  </div>
+</div>
+
+<header class="header">
+    
+<nav class="nav" aria-label="Menú de navegación">
+    <ul class="nav__list">
+        <li>
+            <a href="https://www.mamutlove.com/" title="Mamutlove.com">
+                <span class="sr-only">Volver a la página de inicio</span>
+                <svg class="nav__logo" width="32" height="28" aria-label="Mamutlove">
+                    <use xlink:href="/images/icons/sprite.svg#mamutlove"></use>
+                </svg>
+            </a>
+        </li>
+        
+        
+        
+        
+        <li>
+            <a class="nav__link is-active" href="https://www.mamutlove.com/blog/">blog</a>
+        </li>
+        
+        
+        
+        <li>
+            <a class="nav__link " href="https://www.mamutlove.com/mamut/">mamut</a>
+        </li>
+        
+        
+        
+        <li>
+            <a class="nav__link " href="https://www.mamutlove.com/portfolio/">portfolio</a>
+        </li>
+        
+        <li>
+            <button class="nav__button js-toggle-theme" aria-label="Alternar entre modo oscuro y claro">
+                <svg class="nav__button__icon-light" width="24" height="28">
+                    <use xlink:href="/images/icons/sprite.svg#sun"></use>
+                </svg>
+                <svg class="nav__button__icon-dark" width="24" height="28">
+                    <use xlink:href="/images/icons/sprite.svg#moon"></use>
+                </svg>
+            </button>
+        </li>
+    </ul>
+</nav>
+
+</header>
+
+    
+  <main id="mainContent" class="post">
+    <article class="post-content">
+      <header class="post-content__header">
+        <ul class="post-content__meta">
+          <li>
+            <time datetime="2020-08-02">02-08-2020</time>
+          </li>
+          <li>
+            <span>~5m</span></li>
+          <li>Alejandro Mur</li>
+        </ul>
+        <h1>Introducción a las funciones Min, Max, y Clamp de CSS</h1>
+      </header>
+      
+
+<p>Cuando maquetamos se suelen dar situaciones particulares, como un elemento que tiene que ser más ancho que su padre pero con un valor relativo, o una tipografía fluida entre un rango de valores y dependiente del ancho de pantalla. Para igualar en código el resultado que presenta el equipo de UX/UI tenemos que ingeniar sistemas que nos permitan crear estos estilos, y es en estos casos en los que la función de CSS <code>calc()</code> no sólo brilla sino que es esencial ya que <strong>permite realizar cálculos matemáticos utilizando diferentes unidades</strong>, pero hoy vamos a ver otras funciones también recogidas en el documento de trabajo <a href="https://www.w3.org/TR/css-values-4/#calc-notation">CSS Values and Units Module Level 4</a> que ya cuentan con un <a href="https://caniuse.com/#feat=css-math-functions">amplio soporte</a>: <em>min()</em>, <em>max()</em> y <em>clamp()</em>.</p>
+
+<h2 id="min">Min()</h2>
+
+<p><code>min()</code> es una función de CSS que puede ser aplicada a cualquier propiedad que soporte alguno de los tipos <code>&lt;length&gt;</code>, <code>&lt;frequency&gt;</code>, <code>&lt;angle&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;percentage&gt;</code>, <code>&lt;number&gt;</code>, o <code>&lt;integer&gt;</code>. Es una función a la que dada una serie de valores (parámetros) separados por comas, <strong>se escoge el valor más pequeño</strong> de entre ellos para aplicarlo como valor de la propiedad.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#50fa7b">.element</span> {
+  <span style="color:#ff79c6">width</span>: <span style="color:#ff79c6">min</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">500px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">70</span>%<span style="color:#ff79c6">);</span>
+}</code></pre></div>
+<p>La manera de leer el ejemplo anterior sería así: <em>“En este momento, ¿cuál es el valor más pequeño? ¿500px o el 70% del ancho del contenedor del padre?”</em></p>
+
+<p>Si el contenedor padre midiese 1000px, estaríamos buscando el valor más pequeño entre 500px y 700px, luego el ancho serían 500px.</p>
+
+<p>Sin embargo hacemos hincapié en <em>“En este momento”</em> porque lo interesante es que si cambia el tamaño de la pantalla o el zoom, cambiará el ancho del contenedor padre y por tanto el resultado de ese 70%. Si ahora el contenedor midiese 500px, el 70% serían 350px, luego el valor a aplicarse sería 350px y no 500px como era antes.</p>
+
+<p>En realidad con esta fórmula <strong>estamos asegurando un valor máximo que no se puede sobrepasar</strong>, si la utilizamos para indicar un <code>&lt;width&gt;</code> podríamos entenderla como un equivalente a <code>&lt;width&gt;</code> y <code>&lt;max-width&gt;</code> juntos, ya que tenemos un valor <code>&lt;width&gt;</code> (70%) y un <code>&lt;max-width&gt;</code> (500px).</p>
+
+<blockquote class="blockquote-default">
+    <p>Idealmente los valores que se pasan a la función son de <strong>diferentes unidades</strong> o <strong>relativos</strong> puesto que si fuesen de la misma unidad y absolutos, tipo “500px, 550px” perdería el sentido la propiedad</p>
+
+</blockquote>
+
+<h2 id="max">Max()</h2>
+
+<p><code>max()</code> es otra función de CSS que puede aplicarse a cualquier propiedad que soporte alguno de los tipos <code>&lt;length&gt;</code>, <code>&lt;frequency&gt;</code>, <code>&lt;angle&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;percentage&gt;</code>, <code>&lt;number&gt;</code>, o <code>&lt;integer&gt;</code>. De entre los parámetros separados por comas que recibe la función, <strong>escoge el mayor</strong>,  que será el que se aplique como valor de la propiedad.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#50fa7b">.element</span> {
+  <span style="color:#ff79c6">width</span>: <span style="color:#ff79c6">max</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">40em</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">98</span>%<span style="color:#ff79c6">);</span>
+}</code></pre></div>
+<p>En este caso interpretaríamos el ejemplo anterior de la siguiente manera: <em>“En este momento, ¿qué valor es el mayor de los dos? ¿40em o el 98% del ancho del contenedor padre?”</em></p>
+
+<p>Ya que las condiciones en las que se está renderizando el contenido pueden cambiar, la gracia y la potencia de la función radica en su re-evaluación, pudiendo de esta manera escoger el valor que mejor se ajuste en cada situación.</p>
+
+<p>En este caso <strong>estamos asegurando un valor mínimo</strong> para esa propiedad, si la utilizamos para indicar un <code>&lt;width&gt;</code> podríamos entenderla como un equivalente a <code>&lt;width&gt;</code> y <code>&lt;min-width&gt;</code> juntos, ya que tenemos un valor <code>&lt;width&gt;</code> (98%) y un <code>&lt;min-width&gt;</code> (40em).</p>
+
+<blockquote class="blockquote-default">
+    <p>Tanto para <code>min()</code> como para <code>max()</code> el orden de los parámetros no importa ya que en ocasiones el primer parámetro será el mayor/menor y en otras lo será el segundo</p>
+
+</blockquote>
+
+<h2 id="clamp">Clamp()</h2>
+
+<p>Podemos entender <code>clamp()</code> como la función agrupadora de las dos anteriores. Esta necesariamente debe recibir 3 parámetros y en un orden concreto: <strong>VALOR_MINIMO</strong>, <strong>VALOR_IDEAL</strong> y <strong>VALOR_MAXIMO</strong>.</p>
+
+<p>La función se resuelve con la fórmula: <strong>max(VALOR_MINIMO, min(VALOR_IDEAL, VALOR_MAXIMO))</strong>. Y si le pusiéramos palabras podríamos leerla como: <em>“Escoge el valor mayor entre el mínimo (que funciona como límite por debajo) y el máximo que haya surgido tras resolverse la función <code>min()</code> entre el valor ideal y el máximo (que funcionar como límite por arriba)”</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#50fa7b">.element</span> {
+  <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">clamp</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">14px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">3em</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">4rem</span><span style="color:#ff79c6">);</span>
+
+  <span style="color:#ff79c6">/*</span> 
+    <span style="color:#ff79c6">Asumiendo</span> <span style="color:#ff79c6">que</span> <span style="color:#ff79c6">1em</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">10px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">3em</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">10px</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">3</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">30px</span>
+    <span style="color:#ff79c6">y</span> <span style="color:#ff79c6">que</span> <span style="color:#ff79c6">1rem</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">16px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">4rem</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">16px</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">4</span> <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">64px</span>
+    <span style="color:#ff79c6">Lo</span> <span style="color:#ff79c6">transformaríamos</span> <span style="color:#ff79c6">en</span>
+  <span style="color:#ff79c6">*/</span>
+  <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">clamp</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">14px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">30px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">64px</span><span style="color:#ff79c6">);</span>
+
+  <span style="color:#ff79c6">/*</span> 
+    <span style="color:#ff79c6">Aplicando</span> <span style="color:#ff79c6">la</span> <span style="color:#ff79c6">fórmula</span> <span style="color:#ff79c6">lo</span> <span style="color:#ff79c6">volveríamos</span> <span style="color:#ff79c6">a</span> <span style="color:#ff79c6">transformar</span> <span style="color:#ff79c6">en</span> 
+  <span style="color:#ff79c6">*/</span>
+  <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">max</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">14px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">min</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">30px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">64px</span><span style="color:#ff79c6">))</span> 
+  <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">max</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">14px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">30px</span><span style="color:#ff79c6">);</span>
+  <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">30px</span><span style="color:#ff79c6">;</span>
+}</code></pre></div>
+<p>Estaríamos hablando de una propiedad parecida al shorthand de <em>flex</em> pero que en la práctica sería como aplicar (si estuviésemos indicando un ancho), <code>&lt;min-width&gt;</code>, <code>&lt;max-width&gt;</code> y <code>&lt;width&gt;</code></p>
+
+<blockquote class="blockquote-default">
+    <p><strong>clamp(MIN, VAL, MAX)</strong> se resuelve como <strong>max(MIN, min(VAL, MAX))</strong></p>
+
+</blockquote>
+
+<h2 id="propiedades-comunes-y-usos">Propiedades comunes y usos</h2>
+
+<ul>
+<li><p><code>min()</code>, <code>max()</code>, <code>clamp()</code> pueden utilizarse junto con <code>calc()</code> y además pueden anidarse, es decir, utilizarse combinadas: <code>calc(min())</code>, <code>max(calc())</code>, <code>calc(max(min()))</code>, etc.</p></li>
+
+<li><p>Permiten realizar operaciones matemáticas sencillas como sumas, restas, multiplicaciones y divisiones, y al ser funciones matemáticas no es necesario anidar <code>calc()</code> dentro de ellas sino que con el uso de un paréntesis es suficiente.</p></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#50fa7b">.element-a</span> {
+  <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">max</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">min</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">10</span>%<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">((</span><span style="color:#ff79c6">1</span><span style="color:#50fa7b">.25vw</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">10px</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">0</span><span style="color:#50fa7b">.5</span><span style="color:#ff79c6">),</span> <span style="color:#ff79c6">5vw</span><span style="color:#ff79c6">),</span> <span style="color:#ff79c6">1rem</span><span style="color:#ff79c6">);</span>
+}
+
+<span style="color:#50fa7b">.element-b</span> {
+  <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">max</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">min</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">10</span>%<span style="color:#ff79c6">,</span> <span style="color:#ff79c6">calc</span><span style="color:#ff79c6">((</span><span style="color:#ff79c6">1</span><span style="color:#50fa7b">.25vw</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">10px</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">0</span><span style="color:#50fa7b">.5</span><span style="color:#ff79c6">),</span> <span style="color:#ff79c6">5vw</span><span style="color:#ff79c6">),</span> <span style="color:#ff79c6">1rem</span><span style="color:#ff79c6">);</span>
+}</code></pre></div>
+<ul>
+<li><p>Son de gran utilidad para hacer <strong>tipografías fluidas</strong> y <strong>mejorar la accesibilidad</strong> de nuestro proyecto, ya que con <code>max()</code> y <code>clamp()</code> podríamos establecer un tamaño de fuente mínimo para nuestros textos que aseguren siempre su legibilidad.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#50fa7b">.text</span> {
+    <span style="color:#6272a4">/* Aseguramos que el valor de un texto nunca pueda ser menor que 18px */</span>
+    <span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">clamp</span><span style="color:#ff79c6">(</span><span style="color:#ff79c6">18px</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">(</span><span style="color:#ff79c6">1rem</span> <span style="color:#ff79c6">+</span> <span style="color:#ff79c6">1vw</span><span style="color:#ff79c6">)</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">1</span><span style="color:#50fa7b">.25</span><span style="color:#ff79c6">,</span> <span style="color:#ff79c6">3rem</span><span style="color:#ff79c6">);</span>
+}</code></pre></div></li>
+</ul>
+
+<h2 id="uso-en-sass">Uso en Sass</h2>
+
+<p>Al utilizar <code>min()</code> y <code>max()</code> en Sass (SCSS) ocurre que el compilador (LibSass o Ruby Sass) lanza un error por utilizar unidades incompatibles, esto se debe, como indica la <a href="https://sass-lang.com/documentation/syntax/special-functions#min-and-max">documentación oficial</a> a que estos interpretan <code>min()</code> y <code>max()</code> como las funciones propias de Sass y no como las funciones de CSS (que han llegado mucho después) y por eso para utilizar estas implementaciones recomiendan hacerlas tratándolas como una cadena de texto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SCSS" data-lang="SCSS"><span style="color:#50fa7b">.element-c</span> {
+	<span style="color:#ff79c6">width</span>: <span style="color:#ff79c6">unquote</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">"min(500px, 98%)"</span><span style="color:#ff79c6">);</span>
+}
+
+<span style="color:#50fa7b">.element-d</span> {
+	<span style="color:#ff79c6">font-size</span>: <span style="color:#ff79c6">unquote</span><span style="color:#ff79c6">(</span><span style="color:#f1fa8c">"max(min(10%, ((1.25vw + 10px) * 0.5), 5vw), 1rem)"</span><span style="color:#ff79c6">);</span>
+}</code></pre></div>
+<p>Otra solución, muy inteligente por su sencillez, la aporta <a href="https://twitter.com/anatudor">Ana Tudor</a> en un artículo en <a href="https://t.co/qAY9opJcX1?amp=1">CSS Tricks</a> titulado precisamente <em>“Cuando Sass y las novedades de CSS entran en conflicto”</em> al que llegué a través de la aportación del perfil de <a href="https://twitter.com/CodePen">Codepen</a> al plantear la duda en <a href="https://twitter.com/alejandro_mur/status/1289933669142953985">Twitter</a>. En el artículo se trata con mucha profundidad la computación con diferentes valores no relacionados y otros casos especiales y variables nativas de CSS de por medio, pero la solución es un básico del lenguaje: <strong>Sass es case-sensitive pero CSS no</strong>, por lo que el compilador de Sass no entendería <code>Min()</code> como su función interna y no se produciría el error, ahora bien, el CSS resultante al no hacer esta distinción entre mayúsculas y minúsculas, interpreta de la misma manera <code>MIN()</code>, que <code>Min()</code> o <code>min()</code> y podríamos utilizar sin problemas estas funciones.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Cabe destacar que aunque <code>clamp()</code> es la función más compleja de las 3, es al mismo tiempo la más completa y en la práctica, tras un poco de uso te darás cuenta que será la que más utilices, si no la única.</p>
+
+<p>Estas 3 funciones nos permiten añadir algo más de lógica, flexibilidad y control a nuestras hojas de estilo, lo que nos ayuda a hacer aplicaciones más potentes y enriquecerlas para conseguir resultados cada vez más exigentes. Entender el funcionamiento de <code>min()</code>, <code>max()</code> y <code>clamp()</code> nos va a brindar nuevas herramientas para afrontar una maqueta con más recursos y potencialmente ser más creativos. <a href="https://codepen.io/alejandromur/pen/gOPJeZy">Demo</a></p>
+
+
+
+
+
+
+
+<div class="cp_embed_wrapper"><iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="500" width="100%" name="cp_embed_1" scrolling="no" src="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/gOPJeZy.html" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_gOPJeZy"></iframe></div>
+
+<h2 id="recursos">Recursos</h2>
+
+<p><a href="https://www.w3.org/TR/css-values-4/#intro">W3C - CSS Values and Units Module Level 4</a></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min">MDN</a></p>
+
+<p><a href="https://caniuse.com/#feat=css-math-functions">caniuse.com</a></p>
+
+<p><a href="https://sass-lang.com/documentation/syntax/special-functions#min-and-max">SassLang min, max functions</a></p>
+
+<p><a href="https://webdesign.tutsplus.com/tutorials/mathematical-expressions-calc-min-and-max--cms-29735">webdesign.tutsplus.com</a></p>
+
+      
+      <div id="disqus_thread"><iframe id="dsq-app6451" name="dsq-app6451" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 394px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<script>
+
+  (function () {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'http-www-mamutlove-com';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      <div class="post-promo">
+        <h2>Si te ha parecido interesante</h2>
+        <p>Tanto si tienes alguna duda o quieres charlar sobre este tema, como si el contenido o nuestros perfiles te parecen interesantes y crees que pdemos hacer algo juntos, no dudes en ponerte en contacto con nosotros a través de <a href="https://twitter.com/mamutlove" rel="noopener" title="Síguenos en twitter">twitter</a> o en el email <a href="mailto:hola@mamutlove.com" title="Envíanos un email">hola@mamutlove.com</a>
+        </p>
+        <p>Actualmente <strong>estamos abiertos a nuevas propuestas</strong> para <a href="https://www.mamutlove.com/mamut/#d%c3%b3nde-estamos">colaborar</a>
+        </p>
+      </div>
+    </article>
+  </main>
+
+
+    <footer class="footer">
+    <ul class="footer__list">
+        <li>
+            <a class="link" href="mailto:hola@mamutlove.com" title="Envíanos un email">hola@mamutlove.com</a>
+        </li>
+        <li>
+            <a class="link" href="https://twitter.com/mamutlove" rel="noopener" title="Síguenos en twitter">@mamutlove.com</a>
+        </li>
+        <li><span>© Mamutlove 2021</span></li>
+    </ul>
+</footer>
+
+    
+    
+    
+
+    <script defer="" src="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/scripts.js.descarga"></script>
+
+
+<iframe style="display: none;" src="./Introducción a las funciones Min, Max, y Clamp de CSS _ Mamutlove_files/saved_resource(1).html"></iframe></body></html>

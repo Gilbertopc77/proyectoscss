@@ -1,0 +1,22 @@
+'use strict';
+    
+
+window.onload = () => {
+    // Show and configure cookies
+    if (document.querySelector('[data-role="cookies"]') !== null) {
+        const cookies = new Cookies('[data-role="cookies"]');
+        cookies.init();
+    }
+    
+    // Toggle Dark Theme
+    if (document.querySelector('.js-toggle-theme') !== null) {
+        const themerizr = new Theme('.js-toggle-theme');
+        themerizr.init();
+    }
+
+    // Random Colour When Hovering Posts List
+    if (document.querySelectorAll('.list__item') !== null) {
+        const elements = new RandomColour('.list__item');
+        elements.init();
+    }
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!-- saved from url=(0141)https://codepen.io/alejandromur/embed/gOPJeZy?slug-hash=gOPJeZy&user=alejandromur&height=500&default-tab=result&theme-id=8862&name=cp_embed_1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>CodePen Embed - min(), max(), clamp()</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="KPz2H1No+OGp9Hh8bG4451/yy/ts/exkly1J9uy8Y6hp9NYHOvxl3dnBiOf72fmgtjczpI5BxGu5TnmBj7/voA==">
+<link rel="stylesheet" media="all" href="./embed-309e09885c1aa9602f409897b4a4e60ce0e4a2eb1a23faf4f1785ce9ffee78f0.css">
+<style>
+    .hide {
+      display: none !important;
+    }
+
+    #result-box {
+      background: #3d3d3e;
+      color: #fdfbff;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #3d3d3e;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #fdfbff;
+      background-color: #666666;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #cccccc;
+      color: #000000;
+      box-shadow: inset 0px 3px #dddddd;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #ffffff;
+    }
+
+    .embed-nav svg {
+      stroke: #ffffff !important;
+    }
+  </style>
+<link rel="stylesheet" media="all" href="./twilight-bbb3d58f8024c27567f788f3990f2dce8754c2b67246bf12ad766768fe51955b.css">
+<meta name="monetization" content="$ilp.uphold.com/biyqg2MkQKbe">
+</head>
+<body id="the-body" style="--borderWidth: 0;" class="codepen-embed-body static results-active">
+<nav class="embed-nav group" id="embed-nav">
+<ul class="code-types">
+<li class="code-type">
+<a id="html-link" href="https://codepen.io/alejandromur/embed/gOPJeZy?slug-hash=gOPJeZy&amp;user=alejandromur&amp;height=500&amp;default-tab=result&amp;theme-id=8862&amp;name=cp_embed_1#html-box" role="button" aria-pressed="false">
+HTML
+</a>
+</li>
+<li class="code-type">
+<a id="css-link" href="https://codepen.io/alejandromur/embed/gOPJeZy?slug-hash=gOPJeZy&amp;user=alejandromur&amp;height=500&amp;default-tab=result&amp;theme-id=8862&amp;name=cp_embed_1#css-box" role="button" aria-pressed="false">
+CSS
+</a>
+</li>
+</ul>
+<ul class="result-button-list">
+<li class="results results-type">
+<a id="result-link" href="https://codepen.io/alejandromur/embed/gOPJeZy?slug-hash=gOPJeZy&amp;user=alejandromur&amp;height=500&amp;default-tab=result&amp;theme-id=8862&amp;name=cp_embed_1#result-box" class="active" aria-pressed="true" role="button">
+Result
+</a>
+</li>
+<li>
+<a href="https://codepen.io/alejandromur/embed/gOPJeZy?slug-hash=gOPJeZy&amp;user=alejandromur&amp;height=500&amp;default-tab=result&amp;theme-id=8862&amp;name=cp_embed_1#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+</li>
+</ul>
+<div class="logo-wrap" id="edit-area">
+<a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/alejandromur/pen/gOPJeZy" title="Edit on CodePen">
+<div class="large-logo">
+<span id="edit-on-text" class="open-on">EDIT ON</span>
+<svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+<path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+</div>
+<div class="box-logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+<path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+</div>
+</a>
+</div>
+</nav>
+<div id="output" data-border-style="none" data-header="true">
+<div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+<pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"post min"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>Min()<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"post max"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>Max()<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"post clamp"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>Clamp()<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">h1</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">p</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+</code></pre>
+</div>
+<div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+<pre tabindex="0"><code data-lang="css" id="actual-css-code" class=" cm-s-default">* {
+  <span class="cm-property">box-sizing</span>: <span class="cm-atom">border-box</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">0</span>;
+  <span class="cm-property">margin</span>: <span class="cm-number">0</span>;
+}
+
+<span class="cm-tag">html</span>, <span class="cm-tag">body</span> {
+  <span class="cm-property">font-family</span>: <span class="cm-string">'Courier'</span>;
+  <span class="cm-property">color</span>: <span class="cm-atom">#333</span>;
+}
+
+<span class="cm-qualifier">.post</span> {
+  <span class="cm-property">margin</span>: <span class="cm-number">3em</span> <span class="cm-atom">auto</span>;
+  <span class="cm-property">padding</span>: <span class="cm-number">2em</span>;
+  <span class="cm-property">border</span>: <span class="cm-number">2px</span> <span class="cm-atom">solid</span> <span class="cm-atom">#333</span>;
+  <span class="cm-property">background-color</span>: <span class="cm-atom">#fafafa</span>;
+  <span class="cm-property">border-radius</span>: <span class="cm-number">0.5rem</span>;
+}
+
+<span class="cm-tag">h1</span> {
+  <span class="cm-property">margin-bottom</span>: <span class="cm-number">1rem</span>;
+}
+
+<span class="cm-comment">/*</span>
+<span class="cm-comment">  Computa los valores y elige el más bajo</span>
+<span class="cm-comment">  Si el 98% de la pantalla es &lt; que 680px coge este valor</span>
+<span class="cm-comment">  En caso contrario elige 680px</span>
+
+<span class="cm-comment">  Lo que es equivalente a:</span>
+
+<span class="cm-comment">  width: 98%;</span>
+<span class="cm-comment">  max-width: 680px;</span>
+<span class="cm-comment">*/</span>
+<span class="cm-qualifier">.min</span> {
+  <span class="cm-comment">/*</span>
+<span class="cm-comment">  Se pueden pasar múltiples valores siempre que vayan separados por comas</span>
+<span class="cm-comment">  width: min(98%, 680px + 10vw, 1000px, 20em);</span>
+<span class="cm-comment">  */</span>
+  <span class="cm-property">width</span>: <span class="cm-variable cm-callee">min</span>(<span class="cm-number">98%</span>, <span class="cm-number">680px</span>);
+}
+
+<span class="cm-comment">/*</span>
+<span class="cm-comment">  Computa los valores y elige el más alto</span>
+<span class="cm-comment">  Si el 98% de la pantalla es &gt; que 680px coge este valor</span>
+<span class="cm-comment">  En caso contrario elige 680px</span>
+
+<span class="cm-comment">  Lo que es equivalente a:</span>
+
+<span class="cm-comment">  width: 98%;</span>
+<span class="cm-comment">  min-width: 680px;</span>
+<span class="cm-comment">*/</span>
+<span class="cm-qualifier">.max</span> {
+  <span class="cm-property">width</span>: <span class="cm-variable cm-callee">max</span>(<span class="cm-number">680px</span>, <span class="cm-number">98%</span>);
+}
+
+<span class="cm-comment">/*</span>
+<span class="cm-comment">  clamp(MIN, VAL, MAX) puede resolverse como</span>
+<span class="cm-comment">  max(MIN, min(VAL, MAX))</span>
+
+<span class="cm-comment">  Por lo tanto estaríamos indicando un valor mínimo con MIN que no podría reducir</span>
+<span class="cm-comment">  Un valor máximo con MAX que no se podría sobrepasar</span>
+<span class="cm-comment">  Un valor ideal entre ambos</span>
+
+<span class="cm-comment">  Esta fórmula asegura que se aplique el valor más grande entre un mínimo y el más pequeño de entre uno ideal y uno máximo</span>
+<span class="cm-comment">  Si VAL es superior a MAX, se descarta porque seleccionamos el mínimo, y se va a resolver con MIN escogiendo el valor más alto</span>
+<span class="cm-comment">*/</span>
+<span class="cm-qualifier">.clamp</span> {
+  <span class="cm-property">width</span>: <span class="cm-variable cm-callee">clamp</span>(<span class="cm-number">320px</span>, <span class="cm-number">90%</span>, <span class="cm-number">48rem</span>);
+}
+
+<span class="cm-comment">/*</span>
+<span class="cm-comment">  Se pueden combinar estas funciones entre ellas</span>
+<span class="cm-comment">  En este ejemplo buscamos un valor mínmio seguro que sería 1rem</span>
+<span class="cm-comment">  Si la obtención de un valor con la funcioónes min() y calc() resultase </span>
+<span class="cm-comment">  en un valor &lt; que 1rem no sería elegido y por tanto 1rem actuaría como fallback</span>
+
+<span class="cm-comment">  Si aumentamos el tamaño de la pantalla el cálculo que hacemos en max()</span>
+<span class="cm-comment">  supera el valor 1rem y entonces es escogido</span>
+
+<span class="cm-comment">  El primer valor es obtenido mediante min(), y será el menor de entre los tres valores </span>
+<span class="cm-comment">  que le pasamos. </span>
+<span class="cm-comment">*/</span>
+<span class="cm-tag">p</span> {
+  <span class="cm-property">font-size</span>: <span class="cm-variable cm-callee">calc</span>(<span class="cm-number">1em</span> + <span class="cm-number">0.25vw</span>);
+  <span class="cm-property">font-size</span>: <span class="cm-variable cm-callee">max</span>(<span class="cm-variable cm-callee">min</span>(<span class="cm-number">10%</span>, ((<span class="cm-number">1.25vw</span> + <span class="cm-number">10px</span>) * <span class="cm-number">0.5</span>), <span class="cm-number">5vw</span>), <span class="cm-number">1rem</span>);
+  <span class="cm-property">font-size</span>: <span class="cm-variable cm-callee">max</span>(<span class="cm-variable cm-callee">min</span>(<span class="cm-number">10%</span>, <span class="cm-variable cm-callee">calc</span>((<span class="cm-number">1.25vw</span> + <span class="cm-number">10px</span>) * <span class="cm-number">0.5</span>), <span class="cm-number">5vw</span>), <span class="cm-number">1rem</span>);
+}
+
+<span class="cm-tag">p</span>:<span class="cm-variable cm-callee">not</span>(:<span class="cm-variable-3">last-child</span>) {
+  <span class="cm-property">margin-bottom</span>: <span class="cm-number">1em</span>;
+}
+</code></pre>
+</div>
+<div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+<iframe allow="accelerometer; camera; encrypted-media; geolocation; gyroscope; microphone; midi" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " frameborder="0" id="result-iframe" name="CodePen Preview for min(), max(), clamp()" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation" scrolling="yes" title="CodePen Preview for min(), max(), clamp()" data-src="https://cdpn.io/alejandromur/fullembedgrid/gOPJeZy?animations=run&amp;type=embed" src="./gOPJeZy(1).html">
+  </iframe>
+</div>
+<div id="about-box">
+<div class="about-container">
+<div class="about-user">
+<a href="https://codepen.io/alejandromur" target="_blank" rel="noopener"><img src="./default.png" loading="lazy" alt="" class="about-image"></a>
+<div class="about-user-info">
+<p>
+This Pen is owned by <a href="https://codepen.io/alejandromur" target="_blank" rel="noopener">alejandromur</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+</p>
+<p>
+<a href="https://codepen.io/alejandromur" target="_blank" rel="noopener" class="about-user-more">
+See more by @alejandromur on CodePen
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="resources-box" class="resources-box">
+<h3>External CSS</h3>
+<p>
+This Pen doesn't use any external CSS resources.
+</p>
+<h3>External JavaScript</h3>
+<p>
+This Pen doesn't use any external JavaScript resources.
+</p>
+</div>
+</div>
+<footer class="embed-footer" id="embed-footer">
+<button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+Resources
+</button>
+<ul class="scaling-choices bottom right">
+<li><button class="action-button" id="zoom-button-1">1×</button></li>
+<li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+<li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+<button id="rerun-button" class="action-button rerun-button bottom right">
+Rerun
+</button>
+</footer>
+<script nonce="">
+    __processedPen = {"html":"&lt;div class=&quot;post min&quot;&gt;\n  &lt;h1&gt;Min()&lt;/h1&gt;\n  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!&lt;/p&gt;\n&lt;/div&gt;\n\n&lt;div class=&quot;post max&quot;&gt;\n  &lt;h1&gt;Max()&lt;/h1&gt;\n  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!&lt;/p&gt;\n&lt;/div&gt;\n\n&lt;div class=&quot;post clamp&quot;&gt;\n  &lt;h1&gt;Clamp()&lt;/h1&gt;\n  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quidem cum!&lt;/p&gt;\n&lt;/div&gt;","css":"* {\n  box-sizing: border-box;\n  padding: 0;\n  margin: 0;\n}\n\nhtml, body {\n  font-family: &#39;Courier&#39;;\n  color: #333;\n}\n\n.post {\n  margin: 3em auto;\n  padding: 2em;\n  border: 2px solid #333;\n  background-color: #fafafa;\n  border-radius: 0.5rem;\n}\n\nh1 {\n  margin-bottom: 1rem;\n}\n\n/*\n  Computa los valores y elige el más bajo\n  Si el 98% de la pantalla es &lt; que 680px coge este valor\n  En caso contrario elige 680px\n\n  Lo que es equivalente a:\n\n  width: 98%;\n  max-width: 680px;\n*/\n.min {\n  /*\n  Se pueden pasar múltiples valores siempre que vayan separados por comas\n  width: min(98%, 680px + 10vw, 1000px, 20em);\n  */\n  width: min(98%, 680px);\n}\n\n/*\n  Computa los valores y elige el más alto\n  Si el 98% de la pantalla es &gt; que 680px coge este valor\n  En caso contrario elige 680px\n\n  Lo que es equivalente a:\n\n  width: 98%;\n  min-width: 680px;\n*/\n.max {\n  width: max(680px, 98%);\n}\n\n/*\n  clamp(MIN, VAL, MAX) puede resolverse como\n  max(MIN, min(VAL, MAX))\n\n  Por lo tanto estaríamos indicando un valor mínimo con MIN que no podría reducir\n  Un valor máximo con MAX que no se podría sobrepasar\n  Un valor ideal entre ambos\n\n  Esta fórmula asegura que se aplique el valor más grande entre un mínimo y el más pequeño de entre uno ideal y uno máximo\n  Si VAL es superior a MAX, se descarta porque seleccionamos el mínimo, y se va a resolver con MIN escogiendo el valor más alto\n*/\n.clamp {\n  width: clamp(320px, 90%, 48rem);\n}\n\n/*\n  Se pueden combinar estas funciones entre ellas\n  En este ejemplo buscamos un valor mínmio seguro que sería 1rem\n  Si la obtención de un valor con la funcioónes min() y calc() resultase \n  en un valor &lt; que 1rem no sería elegido y por tanto 1rem actuaría como fallback\n\n  Si aumentamos el tamaño de la pantalla el cálculo que hacemos en max()\n  supera el valor 1rem y entonces es escogido\n\n  El primer valor es obtenido mediante min(), y será el menor de entre los tres valores \n  que le pasamos. \n*/\np {\n  font-size: calc(1em + 0.25vw);\n  font-size: max(min(10%, ((1.25vw + 10px) * 0.5), 5vw), 1rem);\n  font-size: max(min(10%, calc((1.25vw + 10px) * 0.5), 5vw), 1rem);\n}\n\np:not(:last-child) {\n  margin-bottom: 1em;\n}","js":""};
+    __preprocessors = {
+      "html": "none",
+      "css": "none",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+<script src="./embed-3690985ea2a3216737903c1e943e37377719fb52620886c141f0584d7a4f3a6b.js.descarga"></script>
+
+
+</body></html>
